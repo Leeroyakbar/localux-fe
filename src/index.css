@@ -1,13 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  /* Color Palette Localux */
-  --color-primary: #f5ede3;
-  --color-accent: #c9a87c;
-  --color-charcoal: #2c2c2c;
+  --color-primary: #f5ede3; /* Cream dasar */
+  --color-primary-light: #faf7f2; /* Lebih terang untuk sticky */
+  --color-accent: #c9a87c; /* Gold khas Localux */
+  --color-charcoal: #2c2c2c; /* Text */
   --color-blush: #e8d5c4;
 
-  /* Typography */
   --font-heading: "Cormorant Garamond", serif;
   --font-body: "DM Sans", sans-serif;
 }
