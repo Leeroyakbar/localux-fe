@@ -1,17 +1,22 @@
 import Navbar from "./components/layout/Navbar"
+import Hero from "./components/home/Hero" // Impor komponen Hero baru
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-primary">
       <Navbar />
 
-      {/* Spacer agar konten tidak tertutup fixed navbar */}
-      <main className="pt-32 p-8">
-        <h2 className="text-3xl text-center font-heading">Selamat Datang di Localux</h2>
-        <p className="text-center text-charcoal/60 mt-4">Projek e-commerce premium sedang dibangun...</p>
+      {/* HERO SECTION 
+        Tidak perlu spacer khusus di sini karena kita mengatasinya 
+        dengan margin-top (mt-[...]) di dalam komponen Hero.tsx.
+      */}
+      <Hero />
 
-        {/* Placeholder untuk Section berikutnya */}
-        <div className="h-[200vh]"></div>
+      {/* SECTION SELANJUTNYA */}
+      <main className="p-8 md:p-16">
+        <div className="h-[100vh]">
+          <h2 className="text-3xl text-center font-heading text-charcoal">Section Berikutnya (Contoh: Produk Terbaru)</h2>
+        </div>
       </main>
     </div>
   )
