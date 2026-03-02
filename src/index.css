@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color Palette Localux */
+  --color-primary: #f5ede3;
+  --color-accent: #c9a87c;
+  --color-charcoal: #2c2c2c;
+  --color-blush: #e8d5c4;
+
+  /* Typography */
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-primary text-charcoal font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
+  }
+}
