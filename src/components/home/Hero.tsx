@@ -6,21 +6,21 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const slides = [
   {
     id: 1,
-    image: "../../../public/hero/hero-1.png", // Contoh gambar pashmina
+    image: "/hero/hero-1.png", // Langsung dari root public
     title: "Premium Hijab",
     description: "Kualitas Terbaik untuk Muslimah Modern",
     ctaText: "Belanja Sekarang",
   },
   {
     id: 2,
-    image: "../../../public/hero/hero-4.png", // Contoh gambar segiempat
+    image: "/hero/hero-4.png",
     title: "Koleksi Pashmina",
     description: "Sentuhan Lembut dan Mewah untuk Setiap Momen",
     ctaText: "Cek Koleksi",
   },
   {
     id: 3,
-    image: "../../../public/hero/hero-3.png", // Contoh gambar instant
+    image: "/hero/hero-3.png",
     title: "Motif Hijab",
     description: "Tampilkan Motif Hijabmu dengan Kualitas Terbaik",
     ctaText: "Shop Now",
