@@ -13,7 +13,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "../../../public/hero/hero-2.png", // Contoh gambar segiempat
+    image: "../../../public/hero/hero-4.png", // Contoh gambar segiempat
     title: "Koleksi Pashmina",
     description: "Sentuhan Lembut dan Mewah untuk Setiap Momen",
     ctaText: "Cek Koleksi",
