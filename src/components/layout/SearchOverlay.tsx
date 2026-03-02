@@ -1,11 +1,10 @@
-import React from "react"
 import { X, Search } from "lucide-react"
 
 const SearchOverlay = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-[100] bg-white/80 backdrop-blur-xl flex flex-col animate-in fade-in duration-300">
+    <div className="fixed inset-0 z-100 bg-white/80 backdrop-blur-xl flex flex-col animate-in fade-in duration-300">
       <div className="flex justify-end p-10">
         <button onClick={onClose} className="hover:rotate-90 transition-transform duration-300">
           <X size={32} strokeWidth={1} />

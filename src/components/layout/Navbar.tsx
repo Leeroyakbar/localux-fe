@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
                 <a href={link.href} className="text-[13px] uppercase tracking-widest font-medium text-gray-400 group-hover:text-charcoal transition-all duration-300 py-1">
                   {link.name}
                 </a>
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-charcoal transition-all duration-500 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-charcoal transition-all duration-500 group-hover:w-full"></span>
               </li>
             ))}
           </ul>
@@ -67,9 +67,9 @@ const Navbar: React.FC = () => {
       </header>
 
       {/* 3. MOBILE MENU DRAWER (Left Side) */}
-      <div className={`fixed inset-0 z-[110] bg-black/30 backdrop-blur-sm transition-opacity duration-500 md:hidden ${isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => setIsMobileMenuOpen(false)} />
+      <div className={`fixed inset-0 z-110 bg-black/30 backdrop-blur-sm transition-opacity duration-500 md:hidden ${isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => setIsMobileMenuOpen(false)} />
 
-      <div className={`fixed top-0 left-0 h-full w-[80%] max-w-[320px] bg-white z-[111] shadow-2xl transform transition-transform duration-500 ease-in-out md:hidden ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
+      <div className={`fixed top-0 left-0 h-full w-[80%] max-w-[320px] bg-white z-111 shadow-2xl transform transition-transform duration-500 ease-in-out md:hidden ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
         <div className="flex flex-col h-full bg-primary/20">
           <div className="p-6 flex justify-between items-center border-b border-charcoal/5 bg-white">
             <span className="font-heading font-bold text-xl tracking-tight">Menu</span>

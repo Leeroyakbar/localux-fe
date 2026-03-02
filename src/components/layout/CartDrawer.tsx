@@ -4,10 +4,10 @@ const CartDrawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
   return (
     <>
       {/* Background Overlay */}
-      <div className={`fixed inset-0 z-[100] bg-black/20 backdrop-blur-sm transition-opacity duration-500 ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={onClose} />
+      <div className={`fixed inset-0 z-100 bg-black/20 backdrop-blur-sm transition-opacity duration-500 ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={onClose} />
 
       {/* Drawer Content */}
-      <div className={`fixed top-0 right-0 h-full w-full md:w-[400px] bg-white z-[101] shadow-2xl transform transition-transform duration-500 ease-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}>
+      <div className={`fixed top-0 right-0 h-full w-full md:w-100 bg-white z-101 shadow-2xl transform transition-transform duration-500 ease-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}>
         <div className="flex flex-col h-full">
           <div className="p-6 flex items-center justify-between border-b">
             <div className="flex items-center gap-2">
