@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react"
 import { Search, ShoppingBag, User, Menu, X, ChevronRight } from "lucide-react"
 import SearchOverlay from "./SearchOverlay"
 import CartDrawer from "./CartDrawer"
+import { useCart } from "../../hooks/useCart"
+import { AnimatePresence, motion } from "framer-motion"
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { totalItems } = useCart()
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -57,7 +60,20 @@ const Navbar: React.FC = () => {
             </button>
             <button onClick={() => setIsCartOpen(true)} className="p-1 hover:text-accent transition-colors relative">
               <ShoppingBag size={20} strokeWidth={1.5} />
-              <span className="absolute top-0 right-0 bg-accent text-white text-[8px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">0</span>
+              <AnimatePresence mode="popLayout">
+                {totalItems > 0 && (
+                  <motion.span
+                    key={totalItems} // Memicu animasi setiap kali angka berubah
+                    initial={{ scale: 0.5, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.5, opacity: 0 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 25 }}
+                    className="absolute -top-1 -right-1 bg-accent text-white text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-sm"
+                  >
+                    {totalItems}
+                  </motion.span>
+                )}
+              </AnimatePresence>
             </button>
             <button className="hidden md:block p-1 hover:text-accent transition-colors">
               <User size={20} strokeWidth={1.5} />

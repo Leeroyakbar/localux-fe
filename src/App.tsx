@@ -1,6 +1,7 @@
 import Navbar from "./components/layout/Navbar"
 import Hero from "./components/home/Hero" // Impor komponen Hero baru
 import SpecialCollection from "./components/home/SpecialCollection"
+import Catalog from "./components/home/Catalog"
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <SpecialCollection />
+      <Catalog />
 
       {/* SECTION SELANJUTNYA */}
       <main className="p-8 md:p-16">
