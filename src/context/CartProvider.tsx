@@ -16,7 +16,23 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     })
   }
 
+  // Tambahkan di dalam CartProvider
+  const removeFromCart = (id: number, color: string, size: string) => {
+    setCart((prev) => prev.filter((item) => !(item.id === id && item.selectedColor === color && item.selectedSize === size)))
+  }
+
+  const updateQuantity = (id: number, color: string, size: string, change: number) => {
+    setCart((prev) =>
+      prev.map((item) => {
+        if (item.id === id && item.selectedColor === color && item.selectedSize === size) {
+          return { ...item, quantity: Math.max(1, item.quantity + change) }
+        }
+        return item
+      }),
+    )
+  }
+
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0)
 
-  return <CartContext.Provider value={{ cart, addToCart, totalItems }}>{children}</CartContext.Provider>
+  return <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity, totalItems }}>{children}</CartContext.Provider>
 }
