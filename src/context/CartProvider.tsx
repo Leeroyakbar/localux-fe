@@ -16,7 +16,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     })
   }
 
-  // Tambahkan di dalam CartProvider
   const removeFromCart = (id: number, color: string, size: string) => {
     setCart((prev) => prev.filter((item) => !(item.id === id && item.selectedColor === color && item.selectedSize === size)))
   }

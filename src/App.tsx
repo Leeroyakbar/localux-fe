@@ -2,6 +2,8 @@ import Navbar from "./components/layout/Navbar"
 import Hero from "./components/home/Hero" // Impor komponen Hero baru
 import SpecialCollection from "./components/home/SpecialCollection"
 import Catalog from "./components/home/Catalog"
+import Feedback from "./components/home/Feedback"
+import Footer from "./components/home/Footer"
 
 function App() {
   return (
@@ -10,13 +12,8 @@ function App() {
       <Hero />
       <SpecialCollection />
       <Catalog />
-
-      {/* SECTION SELANJUTNYA */}
-      <main className="p-8 md:p-16">
-        <div className="h-screen">
-          <h2 className="text-3xl text-center font-heading text-charcoal">Section Berikutnya (Detail per collection)</h2>
-        </div>
-      </main>
+      <Feedback />
+      <Footer />
     </div>
   )
 }
