@@ -2,7 +2,7 @@ import { useState } from "react"
 import ProductCard from "../layout/ProductCart"
 import ProductModal from "../layout/ProductModal"
 import { useCart } from "../../hooks/useCart"
-import { AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 
 export interface Product {
   id: number
@@ -97,7 +97,7 @@ export default function Catalog() {
   return (
     <div className="bg-white">
       {catalogData.map((section) => (
-        <section key={section.category} className="pb-20">
+        <motion.section key={section.category} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="pb-20">
           {/* Category Banner */}
           <div className="relative w-full bg-charcoal flex items-center justify-center overflow-hidden">
             {/* 1. Overlay tetap absolute untuk menutupi gambar */}
@@ -121,11 +121,11 @@ export default function Catalog() {
           <div className="container mx-auto px-6 md:px-12 mt-16">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6 md:gap-x-10">
               {section.products.map((p) => (
-                <ProductCard key={p.id} product={p} onOpenQuickView={setSelectedProduct} />
+                <ProductCard key={p.id} index={p.id} product={p} onOpenQuickView={setSelectedProduct} />
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
       ))}
 
       <AnimatePresence>
